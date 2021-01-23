@@ -50,7 +50,17 @@ function setBg() {
     }
 }
 
+// Получение имени
+function getName() {
+    if(localStorage.getItem('name') === null){
+        name.textContent = ' [Введите свое имя :)]';
+    } else {
+        name.textContent = localStorage.getItem('name');
+    }
+}
+
 
 // Вызов главной функции
 showTime();
 setBg();
+getName();
