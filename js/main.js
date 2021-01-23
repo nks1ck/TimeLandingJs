@@ -59,6 +59,20 @@ function getName() {
     }
 }
 
+function setName(e) {
+    if(e.type === 'keypress') {
+        if(e.which == 13 || e.keycode == 13){ // Enter = keycode 13.
+            localStorage.setItem('name', e.target.innerText);
+            name.blur();
+        }
+    } else {
+        localStorage.setItem('name', e.target.innerText);
+    }
+}
+
+// Blur - нажатие в любое место.
+name.addEventListener('keypress', setName);
+name.addEventListener('blur', setName);
 
 // Вызов главной функции
 showTime();
